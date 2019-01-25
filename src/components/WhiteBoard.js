@@ -11,6 +11,8 @@ class WhiteBoard extends Component {
       courses: courseService.findAllCourses()
     }
   }
+  deleteCourse = course =>
+    console.log(course)
   render() {
     return (
       <div>
@@ -20,7 +22,10 @@ class WhiteBoard extends Component {
             <Link to="/">Course Grid</Link> |
             <Link to="/table">Course Table</Link>
             <Route path='/' exact
-                   render={() => <CourseGrid courses={this.state.courses}/>}/>
+                   render={() =>
+                     <CourseGrid
+                       deleteCourse={this.deleteCourse}
+                       courses={this.state.courses}/>}/>
             <Route path='/table'
                    render={() => <CourseTable courses={this.state.courses}/>}/>
           </div>

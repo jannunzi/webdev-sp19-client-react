@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-const CourseCard = ({course}) =>
+const CourseCard = ({course, deleteCourse}) =>
   <div className="card"
        styles={{width: '18rem'}}>
     <img className="card-img-top"
@@ -9,6 +9,8 @@ const CourseCard = ({course}) =>
       <h5 className="card-title">{course.title}</h5>
       <p className="card-text">Card text.</p>
       <a href="#" className="btn btn-primary">More...</a>
-      <a href="#" className="btn btn-danger">Delete</a>
+      <a href="#"
+         onClick={() => deleteCourse(course)}
+         className="btn btn-danger">Delete</a>
     </div></div>
 export default CourseCard;
