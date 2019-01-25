@@ -4,6 +4,10 @@ import LessonTabs from "./LessonTabs";
 import TopicPills from "./TopicPills";
 
 class CourseEditor extends React.Component {
+  constructor(props) {
+    super(props)
+    console.log(props.match.params.id)
+  }
   render() {
     return (
       <div>
