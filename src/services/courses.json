@@ -1,6 +1,14 @@
 [
   {
     "id": 123,
-    "title": "course 123"
+    "title": "WebDev"
+  },
+  {
+    "id": 234,
+    "title": "Databases"
+  },
+  {
+    "id": 345,
+    "title": "Software Engineering"
   }
 ]
