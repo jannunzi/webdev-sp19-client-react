@@ -3,6 +3,16 @@ class CourseService {
   constructor() {
     this.courses = courses;
   }
+  addCourse = course => {
+    if(course === null) {
+      course = {
+        id: (new Date()).getTime(),
+        title: 'New Course'
+      }
+    }
+    this.courses.push(course)
+    return this.courses
+  }
   findAllCourses = () =>
     this.courses;
   deleteCourse = deleteCourse =>

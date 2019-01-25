@@ -15,6 +15,10 @@ class WhiteBoard extends Component {
     this.setState({
       courses: this.courseService.deleteCourse(course)
     })
+  addCourse = () =>
+    this.setState({
+      courses: this.courseService.addCourse(null)
+    })
   render() {
     return (
       <div>
@@ -26,6 +30,7 @@ class WhiteBoard extends Component {
             <Route path='/' exact
                    render={() =>
                      <CourseGrid
+                       addCourse={this.addCourse}
                        deleteCourse={this.deleteCourse}
                        courses={this.state.courses}/>}/>
             <Route path='/table'
