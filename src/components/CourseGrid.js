@@ -1,12 +1,12 @@
 import React from 'react'
 import CourseCard from './CourseCards'
-const CourseGrid = () =>
+const CourseGrid = ({courses}) =>
   <div className="card-deck">
-    <CourseCard/>
-    <CourseCard/>
-    <CourseCard/>
-    <CourseCard/>
-    <CourseCard/>
+    {
+        courses.map(course =>
+          <CourseCard key={course.id}/>
+        )
+    }
   </div>
 
 export default CourseGrid
