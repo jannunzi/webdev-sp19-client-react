@@ -6,13 +6,15 @@ import CourseService from '../services/CourseService'
 class WhiteBoard extends Component {
   constructor() {
     super();
-    const courseService = new CourseService()
+    this.courseService = new CourseService()
     this.state = {
-      courses: courseService.findAllCourses()
+      courses: this.courseService.findAllCourses()
     }
   }
   deleteCourse = course =>
-    console.log(course)
+    this.setState({
+      courses: this.courseService.deleteCourse(course)
+    })
   render() {
     return (
       <div>

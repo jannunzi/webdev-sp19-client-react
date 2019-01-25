@@ -9,8 +9,7 @@ const CourseCard = ({course, deleteCourse}) =>
       <h5 className="card-title">{course.title}</h5>
       <p className="card-text">Card text.</p>
       <a href="#" className="btn btn-primary">More...</a>
-      <a href="#"
-         onClick={() => deleteCourse(course)}
+      <a onClick={() => deleteCourse(course)}
          className="btn btn-danger">Delete</a>
     </div></div>
 export default CourseCard;
