@@ -13,10 +13,10 @@ class WhiteBoard extends Component {
     return (
       <div>
         <h1>White Board</h1>
-        <Link to="/grid">Course Grid</Link>
         <Router>
           <div>
-            <Route path='/grid'
+            <Link to="/">Course Grid</Link>
+            <Route path='/'
                    component={CourseGrid}/>
           </div>
         </Router>
