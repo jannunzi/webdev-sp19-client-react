@@ -1,5 +1,5 @@
 import React from 'react'
-import CourseCard from './CourseCards'
+import CourseCard from './CourseCard'
 const CourseTable = () =>
   <table className="table">
     <thead>

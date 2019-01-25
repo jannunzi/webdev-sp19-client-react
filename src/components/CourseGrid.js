@@ -1,10 +1,12 @@
 import React from 'react'
-import CourseCard from './CourseCards'
+import CourseCard from './CourseCard'
 const CourseGrid = ({courses}) =>
   <div className="card-deck">
     {
         courses.map(course =>
-          <CourseCard key={course.id}/>
+          <CourseCard
+            course={course}
+            key={course.id}/>
         )
     }
   </div>
