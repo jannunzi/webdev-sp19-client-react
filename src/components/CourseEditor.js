@@ -16,7 +16,9 @@ class CourseEditor extends React.Component {
     }
   }
   selectModule = module =>
-    console.log(module)
+    this.setState({
+      module: module
+    })
   render() {
     return (
       <div>
