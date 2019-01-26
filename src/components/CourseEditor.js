@@ -2,16 +2,21 @@ import React from 'react'
 import ModuleList from "./ModuleList";
 import LessonTabs from "./LessonTabs";
 import TopicPills from "./TopicPills";
+import CourseService from "../services/CourseService"
 
 class CourseEditor extends React.Component {
   constructor(props) {
     super(props)
-    console.log(props.match.params.id)
+    this.courseService = new CourseService()
+    const courseId = parseInt(props.match.params.id)
+    this.state = {
+      course: this.courseService.findCourseById(courseId)
+    }
   }
   render() {
     return (
       <div>
-        <h2>Course Editor</h2>
+        <h2>Course Editor: {this.state.course.title}</h2>
       <div className="row">
         <div className="col-4">
           <ModuleList/>
