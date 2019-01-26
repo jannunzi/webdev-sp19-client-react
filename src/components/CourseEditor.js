@@ -9,8 +9,10 @@ class CourseEditor extends React.Component {
     super(props)
     this.courseService = new CourseService()
     const courseId = parseInt(props.match.params.id)
+    const course = this.courseService.findCourseById(courseId)
     this.state = {
-      course: this.courseService.findCourseById(courseId)
+      course: course,
+      module: course.modules[0]
     }
   }
   selectModule = module =>
@@ -26,7 +28,8 @@ class CourseEditor extends React.Component {
             modules={this.state.course.modules}/>
         </div>
         <div className="col-8">
-          <LessonTabs/>
+          <LessonTabs
+            lessons={this.state.module.lessons}/>
           <TopicPills/>
         </div>
       </div>
