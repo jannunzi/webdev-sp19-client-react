@@ -48,7 +48,7 @@ class ModuleList extends React.Component {
                 return (
                   <ModuleListItem
                     key={module.id}
-                    title={module.title}/>
+                    module={module}/>
                 )
               }
             )

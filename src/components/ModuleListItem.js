@@ -1,8 +1,8 @@
 import React from 'react'
 
-const ModuleListItem = ({title}) =>
+const ModuleListItem = ({module}) =>
     <li className="list-group-item">
-      {title}
+      {module.title}
     </li>
 
 export default ModuleListItem;
