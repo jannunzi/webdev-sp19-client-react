@@ -19,7 +19,7 @@ class CourseEditor extends React.Component {
         <h2>Course Editor: {this.state.course.title}</h2>
       <div className="row">
         <div className="col-4">
-          <ModuleList/>
+          <ModuleList modules={this.state.course.modules}/>
         </div>
         <div className="col-8">
           <LessonTabs/>
