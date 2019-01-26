@@ -1,7 +1,7 @@
 import React from 'react'
 
-const ModuleListItem = ({module}) =>
-    <li className="list-group-item">
+const ModuleListItem = ({module, selectModule}) =>
+    <li onClick={() => selectModule(module)} className="list-group-item">
       {module.title}
     </li>
 

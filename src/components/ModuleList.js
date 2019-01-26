@@ -47,6 +47,7 @@ class ModuleList extends React.Component {
               (module) => {
                 return (
                   <ModuleListItem
+                    selectModule={this.props.selectModule}
                     key={module.id}
                     module={module}/>
                 )
