@@ -1,15 +1,8 @@
 import React from 'react'
 
-class ModuleListItem extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return(
-      <li className="list-group-item">
-        {this.props.title}
-      </li>
-    )
-  }
-}
+const ModuleListItem = ({module, selectModule}) =>
+    <li onClick={() => selectModule(module)} className="list-group-item">
+      {module.title}
+    </li>
+
 export default ModuleListItem;

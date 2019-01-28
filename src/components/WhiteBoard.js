@@ -1,48 +1,46 @@
 import React, {Component} from 'react'
-import CourseCard from "./CourseCards";
-import ModuleList from "./ModuleList";
-import LessonTabs from "./LessonTabs";
-import TopicPills from "./TopicPills";
-import CourseEditor from "./CourseEditor";
-import Message from "./Message";
-import Stateless from "./Stateless";
 import {BrowserRouter as Router, Link, Route} from 'react-router-dom'
 import CourseGrid from './CourseGrid'
+import CourseTable from './CourseTable'
+import CourseService from '../services/CourseService'
+import CourseEditor from "./CourseEditor";
 class WhiteBoard extends Component {
+  constructor() {
+    super();
+    this.courseService = new CourseService()
+    this.state = {
+      courses: this.courseService.findAllCourses()
+    }
+  }
+  deleteCourse = course =>
+    this.setState({
+      courses: this.courseService.deleteCourse(course)
+    })
+  addCourse = () =>
+    this.setState({
+      courses: this.courseService.addCourse(null)
+    })
   render() {
     return (
       <div>
         <h1>White Board</h1>
         <Router>
           <div>
-            <Link to="/modules">Modules</Link>
-            <Link to="/topics">Topics</Link>
-            <Link to="/lessons">Lessons</Link>
-            <Link to="/grid">Course Grid</Link>
-            <Route path='/grid'
-                   component={CourseGrid}/>
-            <Route path='/modules'
-                   component={ModuleList}/>
-            <Route path='/topics'
-                   component={TopicPills}/>
-            <Route path='/lessons'
-                   component={LessonTabs}/>
+            <Link to="/">Course Grid</Link> |
+            <Link to="/table">Course Table</Link>
+            <Route path='/' exact
+                   render={() =>
+                     <CourseGrid
+                       addCourse={this.addCourse}
+                       deleteCourse={this.deleteCourse}
+                       courses={this.state.courses}/>}/>
+            <Route path="/course/:id"
+                   exact
+                   component={CourseEditor}/>
+            <Route path='/table'
+                   render={() => <CourseTable courses={this.state.courses}/>}/>
           </div>
         </Router>
-        <ModuleList/>
-        <Stateless message="Stateless World"/>
-        <Message message="life is good!"/>
-        <CourseEditor/>
-        <TopicPills/>
-        <LessonTabs/>
-        <div className="card-deck">
-          <CourseCard/>
-          <CourseCard/>
-          <CourseCard/>
-          <CourseCard/>
-          <CourseCard/>
-        </div>
-        <CourseGrid/>
       </div>
     )
   }

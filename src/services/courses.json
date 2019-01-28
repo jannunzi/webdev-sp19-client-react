@@ -1,0 +1,64 @@
+[
+  {
+    "id": 123,
+    "title": "WebDev",
+    "modules": [
+      {
+        "id": 1,
+        "title": "jQuery",
+        "lessons": [
+          {
+            "id": 1,
+            "title": "Lesson 1"
+          },
+          {
+            "id": 2,
+            "title": "Lesson 2"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "React",
+        "lessons": [
+          {
+            "id": 3,
+            "title": "Lesson 3"
+          },
+          {
+            "id": 4,
+            "title": "Lesson 4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 234,
+    "title": "Databases",
+    "modules": [
+      {
+        "id": 3,
+        "title": "SQL"
+      },
+      {
+        "id": 4,
+        "title": "JPA"
+      }
+    ]
+  },
+  {
+    "id": 345,
+    "title": "Software Engineering",
+    "modules": [
+      {
+        "id": 5,
+        "title": "Agile"
+      },
+      {
+        "id": 6,
+        "title": "Testing"
+      }
+    ]
+  }
+]
