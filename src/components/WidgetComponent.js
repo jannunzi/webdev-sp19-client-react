@@ -2,10 +2,15 @@ import React from 'react'
 import HeadingWidget from './HeadingWidget'
 import ImageWidget from './ImageWidget'
 
-const WidgetComponent = ({widget, deleteWidget}) =>
+const WidgetComponent = ({widget, deleteWidget, updateWidget}) =>
     <div>
         <button onClick={() => deleteWidget(widget)}>Delete</button>
-        <select className="form-control" value={widget.type}>
+        <select
+            onChange={(event) => {
+                widget.type = event.target.value
+                updateWidget(widget)
+            }}
+            className="form-control" value={widget.type}>
             <option value="HEADING">Heading</option>
             <option value="IMAGE">Image</option>
         </select>

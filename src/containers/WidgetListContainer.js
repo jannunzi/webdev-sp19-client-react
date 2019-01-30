@@ -15,7 +15,12 @@ const dispatchToPropertyMapper = dispatch => ({
     addWidget: () =>
         dispatch({
             type: 'ADD_WIDGET'
-        })
+        }),
+    updateWidget: widget =>
+        dispatch({
+            type: 'UPDATE_WIDGET',
+            widget: widget
+        }),
 })
 
 const WidgetListContainer = connect(

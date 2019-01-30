@@ -32,6 +32,13 @@ const widgetReducer = (state = widgets, action) => {
                     }
                 ]
             }
+        case 'UPDATE_WIDGET':
+            // replace the old widget with the new widget
+            return {
+                widgets: state.widgets.map(widget =>
+                    widget.id === action.widget.id ? action.widget : widget
+                )
+            }
         default:
             return state;
     }
