@@ -4,6 +4,13 @@ import LessonTabs from "./LessonTabs";
 import TopicPills from "./TopicPills";
 import CourseService from "../services/CourseService"
 
+import WidgetListContainer from '../containers/WidgetListContainer'
+import widgetReducer from '../reducers/WidgetReducer'
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+
+const store = createStore(widgetReducer);
+
 class CourseEditor extends React.Component {
   constructor(props) {
     super(props)
@@ -33,6 +40,9 @@ class CourseEditor extends React.Component {
           <LessonTabs
             lessons={this.state.module.lessons}/>
           <TopicPills/>
+          <Provider store={store}>
+            <WidgetListContainer/>
+          </Provider>
         </div>
       </div>
       </div>
