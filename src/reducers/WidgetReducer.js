@@ -16,6 +16,12 @@ const widgets =
         ]
     }
 const widgetReducer = (state = widgets, action) => {
+    switch(action.type) {
+        case 'DELETE_WIDGET':
+            return {
+                widgets: state.widgets.filter(widget => widget.id !== action.widget.id)
+            }
+    }
     return state;
 }
 

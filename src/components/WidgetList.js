@@ -8,6 +8,7 @@ const WidgetList = ({widgets, deleteWidget}) =>
             widgets.map(widget =>
                 <WidgetComponent
                     key={widget.id}
+                    deleteWidget={deleteWidget}
                     widget={widget}/>
             )
         }
