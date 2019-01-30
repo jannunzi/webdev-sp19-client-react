@@ -15,6 +15,13 @@ const HeadingWidget = ({widget, updateWidget}) =>
         <option value="4">Heading 4</option>
         <option value="5">Heading 5</option>
     </select>
+    <input
+        value={widget.text}
+        onChange={event => {
+            widget.text = event.target.value
+            updateWidget(widget)
+        }}
+        className="form-control"/>
     <h3>Preview</h3>
     {
         widget.size === 1 && <h1>{widget.text}</h1> ||
