@@ -21,8 +21,20 @@ const widgetReducer = (state = widgets, action) => {
             return {
                 widgets: state.widgets.filter(widget => widget.id !== action.widget.id)
             }
+        case 'ADD_WIDGET':
+            return {
+                widgets: [
+                    ...state.widgets,
+                    {
+                        type: 'HEADING',
+                        text: 'New Widget',
+                        size: 1
+                    }
+                ]
+            }
+        default:
+            return state;
     }
-    return state;
 }
 
 export default widgetReducer;

@@ -1,6 +1,6 @@
 import React from 'react'
 import WidgetComponent from './WidgetComponent'
-const WidgetList = ({widgets, deleteWidget}) =>
+const WidgetList = ({widgets, addWidget, deleteWidget}) =>
     <div>
         <h1>Widget List {widgets.length}</h1>
         <div className="list-group">
@@ -12,6 +12,11 @@ const WidgetList = ({widgets, deleteWidget}) =>
                     widget={widget}/>
             )
         }
+        <button
+            onClick={addWidget}
+            className="btn btn-success">
+            Add
+        </button>
         </div>
     </div>
 
