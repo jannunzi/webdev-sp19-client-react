@@ -4,7 +4,9 @@ const widgets =
             {
                 id: 123,
                 title: 'Widget 1',
-                type: 'HEADING'
+                type: 'HEADING',
+                text: 'This is a heading',
+                size: 2
             },
             {
                 id: 234,
