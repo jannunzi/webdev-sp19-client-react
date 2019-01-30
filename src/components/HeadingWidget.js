@@ -1,8 +1,20 @@
 import React from 'react'
 
-const HeadingWidget = ({widget}) =>
+const HeadingWidget = ({widget, updateWidget}) =>
 <div>
     <h2>Heading Widget</h2>
+    <select
+        onChange={event => {
+            widget.size = parseInt(event.target.value)
+            updateWidget(widget)
+        }}
+        className="form-control">
+        <option value="1">Heading 1</option>
+        <option value="2">Heading 2</option>
+        <option value="3">Heading 3</option>
+        <option value="4">Heading 4</option>
+        <option value="5">Heading 5</option>
+    </select>
     <h3>Preview</h3>
     {
         widget.size === 1 && <h1>{widget.text}</h1> ||
